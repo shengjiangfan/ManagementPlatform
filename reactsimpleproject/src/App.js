@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import './App.css'
+import ItemTable from "./components/itemTable";
 //定义组件
 class App extends Component {
 //初始化状态
@@ -17,33 +18,9 @@ class App extends Component {
     return (
         <div className="container-fluid" style={{marginTop: '20px'}}>
           <div className="row">
-            <div className="col-xs-4 col-xs-offset-1">
-              <table className="table table-bordered">
-                <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>用户名</th>
-                  <th>操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                  !!this.state.list && this.state.list.map(item=>{
-                    return (
-                        <tr key={item.id}>
-                          <td>{item.id}</td>
-                          <td>{item.name}</td>
-                          <td>
-                            <button className="btn btn-primary" onClick={()=>{this.setState({id:item.id,name:item.name})}}>修改</button>
-                            <button className="btn btn-danger" style={{marginLeft:'5px'}} onClick={()=>{this.deleteItem(item)}}>删除</button>
-                          </td>
-                        </tr>
-                    )
-                  })
-                }
-                </tbody>
-              </table>
-            </div>
+            {/*信息表格*/}
+            <ItemTable list={this.state.list} deleteItem={this.deleteItem} />
+
             <div className="col-xs-3 col-xs-offset-1">
               <form className="form-horizontal">
                 <div className="form-group">
@@ -87,8 +64,8 @@ class App extends Component {
       let rowData = this.state.list;
       for(let i in rowData){
         let unit = rowData[i];
-        if(unit.id == item.id){
-          console.log("delte")
+        if(unit.id === item.id){
+          console.log("delete")
           delete rowData[i];
         }
       }

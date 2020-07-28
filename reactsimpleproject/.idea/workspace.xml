@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bd1c545-349f-4280-bb5a-13b67ddd245e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/itemTable.js" afterDir="false" />
+    <list default="true" id="1bd1c545-349f-4280-bb5a-13b67ddd245e" name="Default Changelist" comment="update">
+      <change beforePath="$PROJECT_DIR$/../backendcode/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backendcode/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/itemTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemTable.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +25,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="E:/nodejs/node.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -78,32 +82,47 @@
       <workItem from="1595815585482" duration="2134000" />
       <workItem from="1595818462814" duration="733000" />
       <workItem from="1595919596031" duration="664000" />
+      <workItem from="1595920289842" duration="687000" />
+      <workItem from="1595921001503" duration="111000" />
+      <workItem from="1595921175070" duration="10020000" />
+      <workItem from="1595939050193" duration="10418000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="705" y="277" key="#ESLint" timestamp="1595947104773">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="705" y="277" key="#ESLint/0.0.1280.760@0.0.1280.760" timestamp="1595947104773" />
     <state x="96" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595920234134">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="96" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1595920234134" />
-    <state width="1260" height="126" key="GridCell.Tab.0.bottom" timestamp="1595920260553">
+    <state x="245" y="0" key="CommitChangelistDialog2" timestamp="1595922990770">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="126" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
-    <state width="1260" height="126" key="GridCell.Tab.0.center" timestamp="1595920260553">
+    <state x="245" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1595922990770" />
+    <state width="858" height="126" key="GridCell.Tab.0.bottom" timestamp="1595953972269">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="126" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
-    <state width="1260" height="126" key="GridCell.Tab.0.left" timestamp="1595920260553">
+    <state width="858" height="126" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1595953972269" />
+    <state width="858" height="126" key="GridCell.Tab.0.center" timestamp="1595953972269">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="126" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
-    <state width="1260" height="126" key="GridCell.Tab.0.right" timestamp="1595920260553">
+    <state width="858" height="126" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1595953972269" />
+    <state width="858" height="126" key="GridCell.Tab.0.left" timestamp="1595953972269">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1260" height="126" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
+    <state width="858" height="126" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1595953972269" />
+    <state width="858" height="126" key="GridCell.Tab.0.right" timestamp="1595953972269">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="858" height="126" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1595953972269" />
   </component>
 </project>

@@ -9,17 +9,21 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list:[]
+            list:[],
         }
     }
 
     render() {
-        console.log(1234)
+        console.log('Render App')
         return (
             <div className="container-fluid" style={{marginTop: '20px'}}>
                 <div className="row">
                     {/*信息表格*/}
-                    <ItemTable list={this.state.list} deleteItem={this.deleteItem}/>
+                    <ItemTable
+                        list={this.state.list}
+                        deleteItem={this.deleteItem}
+                        changeItem={this.changeItem}
+                    />
 
                     <div className="col-xs-3 col-xs-offset-1">
                         <form className="form-horizontal">
@@ -63,9 +67,28 @@ class App extends Component {
         })
     };
 
+
+    //修改
+    changeItem = (item) => {
+        axios.post(`/user`,{id:item.id,name: item.name}).then(({data}) => {
+            console.log(data);
+            let rowData = this.state.list;
+            for (let i in rowData) {
+                let unit = rowData[i];
+                if (unit.id === item.id) {
+                    console.log("change")
+                    rowData[i].name=item.name
+                }
+            }
+            this.setState({list: rowData});
+            //[{"id":5,"name":"ads"},{"id":6,"name":"as"},{"id":7,"name":"asdas"},{"id":8,"name":"as"},{"id":9,"name":"asdadzzz"},{"id":10,"name":"asd"},{"id":11,"name":"ad"},{"id":12,"name":"asda"},{"id":13,"name":"11"}]
+        })
+    };
+
+    //删除
     deleteItem = (item) => {
-        axios.delete(`/user/${item.id}`).then(({data}) => {
-        //axios.post(`/user`,item.id).then(({data}) => {
+        //axios.delete(`/user/${item.id}`).then(({data}) => {
+        axios.post(`/user`, {id:item.id,name: item.name}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
@@ -75,11 +98,12 @@ class App extends Component {
                     delete rowData[i];
                 }
             }
-            this.setState({"list": rowData});
+            this.setState({list: rowData});
             //[{"id":5,"name":"ads"},{"id":6,"name":"as"},{"id":7,"name":"asdas"},{"id":8,"name":"as"},{"id":9,"name":"asdadzzz"},{"id":10,"name":"asd"},{"id":11,"name":"ad"},{"id":12,"name":"asda"},{"id":13,"name":"11"}]
         })
     };
-//提交
+
+    //提交
     handleFormSubmit = (e) => {
         e.preventDefault();
         if (this.state.name !== '') {

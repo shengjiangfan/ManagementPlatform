@@ -4,8 +4,20 @@ import PropTypes from 'prop-types'
 class ItemTable extends React.Component {
     constructor(props) {
         super(props)
+        this.state={
+            changeable:false
+        }
 
         this.deleteInfo = this.deleteInfo.bind(this)
+        this.changeInfo = this.changeInfo.bind(this)
+    }
+
+    changeInfo(item){
+        if (window.confirm(`确定修改吗?`)) {
+            this.setState({changeable:false})
+            this.props.changeItem(item)
+        }
+        this.setState({changeable:true})
     }
 
     deleteInfo(item) {
@@ -17,6 +29,7 @@ class ItemTable extends React.Component {
     render() {
         let list = this.props.list
 
+        console.log('Render itemTable')
         return (
             <div className="col-xs-4 col-xs-offset-1">
                 <table className="table table-bordered">
@@ -33,18 +46,25 @@ class ItemTable extends React.Component {
                             return (
                                 <tr key={item.id}>
                                     <td>{item.id}</td>
-                                    <td>{item.name}</td>
+                                    <td suppressContentEditableWarning
+                                        contentEditable={this.state.changeable}
+                                        onBlur={event=>{
+                                            item.name=event.target.innerHTML;
+                                            this.changeInfo(item)}}
+                                    >{item.name}</td>
                                     <td>
-                                        <button className="btn btn-primary" onClick={() => {
-                                            this.setState({id: item.id, name: item.name})
-                                        }}>修改
+                                        <button className="btn btn-primary"
+                                                onClick={() => {this.setState({changeable: true})}}
+                                        >修改
                                         </button>
-                                        <button className="btn btn-danger" style={{marginLeft: '5px'}} onClick={() => {
-                                            this.deleteInfo(item)
-                                        }}>删除
+                                        <button
+                                            className="btn btn-danger" style={{marginLeft: '5px'}}
+                                            onClick={() => {this.deleteInfo(item)}}
+                                        >删除
                                         </button>
                                     </td>
                                 </tr>
+
                             )
                         })
                     }
@@ -57,8 +77,8 @@ class ItemTable extends React.Component {
 
 ItemTable.propTypes = {
     list: PropTypes.array.isRequired,
-    deleteItem: PropTypes.func.isRequired
-
+    deleteItem: PropTypes.func.isRequired,
+    changeItem: PropTypes.func.isRequired
 }
 
 export default ItemTable

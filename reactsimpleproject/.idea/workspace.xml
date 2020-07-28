@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bd1c545-349f-4280-bb5a-13b67ddd245e" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="1bd1c545-349f-4280-bb5a-13b67ddd245e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/itemTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1f5iGW746NZUz1Krn8YE8vvdZXe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -21,18 +31,6 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -79,10 +77,33 @@
       <workItem from="1595813789703" duration="1065000" />
       <workItem from="1595815585482" duration="2134000" />
       <workItem from="1595818462814" duration="733000" />
+      <workItem from="1595919596031" duration="664000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595920234134">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="96" y="35" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1595920234134" />
+    <state width="1260" height="126" key="GridCell.Tab.0.bottom" timestamp="1595920260553">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="126" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
+    <state width="1260" height="126" key="GridCell.Tab.0.center" timestamp="1595920260553">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="126" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
+    <state width="1260" height="126" key="GridCell.Tab.0.left" timestamp="1595920260553">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="126" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
+    <state width="1260" height="126" key="GridCell.Tab.0.right" timestamp="1595920260553">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1260" height="126" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1595920260553" />
   </component>
 </project>

@@ -91,7 +91,7 @@ class App extends Component {
     //删除
     deleteItem = (item) => {
         //axios.delete(`/user/${item.id}`).then(({data}) => {
-        axios.post(`/user`, {id:item.id,name: item.name}).then(({data}) => {
+        axios.get(`/user/delete`,{params:{id:item.id}}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {

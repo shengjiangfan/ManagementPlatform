@@ -8,23 +8,9 @@ class ItemTable extends React.Component {
             changeable:false
         }
 
-        this.deleteInfo = this.deleteInfo.bind(this)
-        this.changeInfo = this.changeInfo.bind(this)
     }
 
-    changeInfo(item){
-        if (window.confirm(`确定修改吗?`)) {
-            this.setState({changeable:false})
-            this.props.changeItem(item)
-        }
-        this.setState({changeable:true})
-    }
 
-    deleteInfo(item) {
-        if (window.confirm(`确定删除"${item.name}"的信息吗?`)) {
-            this.props.deleteItem(item)
-        }
-    }
 
     render() {
         let list = this.props.list
@@ -49,8 +35,13 @@ class ItemTable extends React.Component {
                                     <td suppressContentEditableWarning
                                         contentEditable={this.state.changeable}
                                         onBlur={event=>{
-                                            item.name=event.target.innerHTML;
-                                            this.changeInfo(item)}}
+                                            let context=event.target.innerHTML
+                                            if (window.confirm(`确定修改为"${context}"吗?`)) {
+                                                item.name=context;
+                                            }
+                                            this.setState({changeable:false})
+                                            this.props.changeItem(item)
+                                            }}
                                     >{item.name}</td>
                                     <td>
                                         <button className="btn btn-primary"
@@ -59,7 +50,11 @@ class ItemTable extends React.Component {
                                         </button>
                                         <button
                                             className="btn btn-danger" style={{marginLeft: '5px'}}
-                                            onClick={() => {this.deleteInfo(item)}}
+                                            onClick={() => {
+                                                if (window.confirm(`确定删除"${item.name}"的信息吗?`)) {
+                                                    this.props.deleteItem(item)
+                                                }
+                                            }}
                                         >删除
                                         </button>
                                     </td>

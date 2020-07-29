@@ -55,7 +55,7 @@ class App extends Component {
         let self = this;
         setTimeout(function () {
             self.query();
-        }, 5000)
+        }, 500)
 
     }
 

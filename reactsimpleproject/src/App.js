@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import './App.css'
 import ItemTable from "./components/itemTable";
+import Filter from "./components/filter";
 
 //定义组件
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
             list:[{
               id:'',
               name:''
-            }],
+            }]
         }
     }
 
@@ -27,6 +28,8 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         changeItem={this.changeItem}
                     />
+                    <Filter myfilter={this.myFilter}/>
+
 
                     <div className="col-xs-3 col-xs-offset-1">
                         <form className="form-horizontal">
@@ -63,13 +66,12 @@ class App extends Component {
     }
 
     query = () => {
-        axios.get('/user').then(({data}) => {
+        axios.get('/user/query').then(({data}) => {
             this.setState({
                 list: data
             });
         })
     };
-
 
     //修改
     changeItem = (item) => {
@@ -77,7 +79,7 @@ class App extends Component {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
-                let unit = rowData[i];
+                let unit = rowData[i]
                 if (unit.id === item.id) {
                     console.log("change")
                     rowData[i].name=item.name
@@ -118,6 +120,10 @@ class App extends Component {
                 this.query();
             })
         }
+    }
+    myFilter = (list) => {
+
+        this.setState({ list })
     }
 }
 

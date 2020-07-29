@@ -7,15 +7,9 @@ class ItemTable extends React.Component {
         this.state={
             changeable:false
         }
-
     }
-
-
-
     render() {
         let list = this.props.list
-
-        console.log('Render itemTable')
         return (
             <div className="col-xs-4 col-xs-offset-1">
                 <table className="table table-bordered">

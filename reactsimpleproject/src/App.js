@@ -28,8 +28,6 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         changeItem={this.changeItem}
                     />
-                    <Filter myfilter={this.myFilter}/>
-
 
                     <div className="col-xs-3 col-xs-offset-1">
                         <form className="form-horizontal">
@@ -50,6 +48,8 @@ class App extends Component {
                             </div>
                         </form>
                     </div>
+
+                    <Filter myfilter={this.myFilter}/>
                 </div>
 
             </div>

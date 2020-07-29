@@ -25,8 +25,8 @@ public class UserController {
         this.userRepository.save(user);
         return true;
     }
-    @DeleteMapping("/{id}")//删
-    public Object delUser(@PathVariable Integer id
+    @RequestMapping("/delete")//删
+    public Object delUser(@RequestParam("id") Integer id
     ) {
         this.userRepository.deleteById(id);
         return true;

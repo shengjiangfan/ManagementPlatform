@@ -9,11 +9,13 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list:[{
-              id:'',
-              name:''
+            list: [{
+                id: '',
+                name: ''
             }],
         }
+        this.changeItem = this.changeItem.bind(this)
+        this.deleteItem = this.deleteItem.bind(this)
     }
 
     render() {
@@ -73,14 +75,14 @@ class App extends Component {
 
     //修改
     changeItem = (item) => {
-        axios.post(`/user/post`,{id:item.id,name: item.name}).then(({data}) => {
+        axios.post(`/user/post`, {id: item.id, name: item.name}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
                 let unit = rowData[i];
                 if (unit.id === item.id) {
                     console.log("change")
-                    rowData[i].name=item.name
+                    rowData[i].name = item.name
                 }
             }
             this.setState({list: rowData});
@@ -90,7 +92,7 @@ class App extends Component {
 
     //删除
     deleteItem = (item) => {
-        axios.get(`/user/delete`,{params:{id:item.id}}).then(({data}) => {
+        axios.get(`/user/delete`, {params: {id: item.id}}).then(({data}) => {
             let rowData = this.state.list;
             for (let i in rowData) {
                 let unit = rowData[i];
@@ -107,7 +109,10 @@ class App extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         if (this.state.name !== '') {
-            axios.post('/user/post', {id: !this.state.id ? '' : this.state.id, name: this.state.name}).then(({data}) => {
+            axios.post('/user/post', {
+                id: !this.state.id ? '' : this.state.id,
+                name: this.state.name
+            }).then(({data}) => {
                 this.setState({
                     id: '',
                     name: ''

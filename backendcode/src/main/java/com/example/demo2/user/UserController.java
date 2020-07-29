@@ -15,11 +15,11 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping//查
+    @RequestMapping//查
     public List<User> getList() {
         return this.userRepository.findAll();
     }
-    @PostMapping("/post")//增
+    @RequestMapping("/post")//增
     public Object addUser(@RequestBody User user) {
         this.userRepository.save(user);
         return true;

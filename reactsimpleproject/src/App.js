@@ -73,7 +73,7 @@ class App extends Component {
 
     //修改
     changeItem = (item) => {
-        axios.post(`/user`,{id:item.id,name: item.name}).then(({data}) => {
+        axios.post(`/user/post`,{id:item.id,name: item.name}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
@@ -110,7 +110,7 @@ class App extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault();
         if (this.state.name !== '') {
-            axios.post('/user', {id: !this.state.id ? '' : this.state.id, name: this.state.name}).then(({data}) => {
+            axios.post('/user/post', {id: !this.state.id ? '' : this.state.id, name: this.state.name}).then(({data}) => {
                 this.setState({
                     id: '',
                     name: ''

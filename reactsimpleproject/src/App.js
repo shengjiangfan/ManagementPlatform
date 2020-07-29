@@ -90,9 +90,7 @@ class App extends Component {
 
     //删除
     deleteItem = (item) => {
-        //axios.delete(`/user/${item.id}`).then(({data}) => {
         axios.get(`/user/delete`,{params:{id:item.id}}).then(({data}) => {
-            console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
                 let unit = rowData[i];
@@ -102,7 +100,6 @@ class App extends Component {
                 }
             }
             this.setState({list: rowData});
-            //[{"id":5,"name":"ads"},{"id":6,"name":"as"},{"id":7,"name":"asdas"},{"id":8,"name":"as"},{"id":9,"name":"asdadzzz"},{"id":10,"name":"asd"},{"id":11,"name":"ad"},{"id":12,"name":"asda"},{"id":13,"name":"11"}]
         })
     };
 

@@ -1,25 +1,22 @@
 package com.example.demo2.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-//@CrossOrigin(origins = {"http://localhost:3000"},allowCredentials = "true",allowedHeaders = {"X-Custom-Header"},
-        //maxAge = 3600L, methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.HEAD})
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
-
-    @GetMapping//查
+    //查
+    @RequestMapping("/query")
     public List<User> getList() {
         return this.userRepository.findAll();
     }
-    @PostMapping("/post")//增
+
+    @RequestMapping("/post")
     public Object addUser(@RequestBody User user) {
         this.userRepository.save(user);
         return true;
@@ -30,15 +27,12 @@ public class UserController {
         this.userRepository.deleteById(id);
         return true;
     }
-
-    /***@RequestMapping("/")
-    @ResponseBody
-
-    public User getUser(@RequestParam("name")String name, @RequestParam("id") String id ){
-        User user = userRepository.findById(Integer.parseInt(id)).get();
-
-        return user;
+    @RequestMapping("/filter")
+    public List<User> getSome(@RequestParam("lower") Integer lower,@RequestParam("upper") Integer upper){
+        return this.userRepository.findBetween(lower,upper);
     }
-    ***/
+
+
+
 
 }

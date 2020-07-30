@@ -17,15 +17,15 @@ class Form extends Component {
     }
     render() {
         return(
-            <div className="col-md-4 col-md-offset-2">
+            <div className="col-md-4 col-md-offset-1">
                 <form className="form-horizontal">
                     <div className="form-group">
-                        <label htmlFor="id" className="col-xs-3">id</label>
+                        <label htmlFor="id" className="col-xs-3">ID</label>
                         <div className="col-xs-8">
                             <input type="text" id="id" className="form-control"  onChange={(e)=>{this.setState({id:e.target.value})}}/>
 
                         </div>
-                        <label htmlFor="name" className="col-xs-3">name</label>
+                        <label htmlFor="name" className="col-xs-3">Name</label>
                         <div className="col-xs-8">
                             <input type="text" id="name" className="form-control"  onChange={(e)=>{this.setState({name:e.target.value})}}/>
 

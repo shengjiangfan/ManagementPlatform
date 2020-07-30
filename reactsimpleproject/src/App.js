@@ -29,8 +29,11 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         changeItem={this.changeItem}
                     />
-                    <Form myform={this.myForm}/>
-                    <Filter myfilter={this.myFilter}/>
+                    <div>
+                        <Form myform={this.myForm}/>
+                        <Filter myfilter={this.myFilter}/>
+                    </div>
+
 
 
 

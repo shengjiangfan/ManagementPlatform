@@ -36,7 +36,7 @@ class ItemTable extends React.Component {
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>用户名</th>
+                        <th>Name</th>
                         <th>操作</th>
                     </tr>
                     </thead>

@@ -35,7 +35,7 @@ class Filter extends Component {
 
                     </div>
                     <div className="form-group">
-                        <div className="col-sm-offset-2 col-sm-10">
+                        <div className="col-sm-offset-3 col-sm-10">
                             <button className="btn btn-default" onClick={this.handleFilter}>筛选</button>
                         </div>
                     </div>

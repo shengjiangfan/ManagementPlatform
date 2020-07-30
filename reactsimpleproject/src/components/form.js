@@ -21,11 +21,11 @@ class Form extends Component {
             <div className="col-md-4 col-md-offset-1">
                 <form className="form-horizontal">
                     <div className="form-group">
-                        <label htmlFor="id" className="col-xs-3">ID</label>
-                        <div className="col-xs-8">
-                            <input type="text" id="id" className="form-control"  onChange={(e)=>{this.setState({id:e.target.value})}}/>
+                        {/*<label htmlFor="id" className="col-xs-3">ID</label>*/}
+                        {/*<div className="col-xs-8">*/}
+                        {/*    <input type="text" id="id" className="form-control"  onChange={(e)=>{this.setState({id:e.target.value})}}/>*/}
 
-                        </div>
+                        {/*</div>*/}
                         <label htmlFor="name" className="col-xs-3">Name</label>
                         <div className="col-xs-8">
                             <input type="text" id="name" className="form-control"  onChange={(e)=>{this.setState({name:e.target.value})}}/>
@@ -46,21 +46,15 @@ class Form extends Component {
     handleForm = (e) =>{
         e.preventDefault();
         // eslint-disable-next-line no-restricted-globals
-        const flag =confirm('是否提交 id：'+this.state.id + ';name:' + this.state.name + '?')
+        const flag =confirm(';name:' + this.state.name + '?')
         if(flag == true) {
-            if (this.state.id !== '' && this.state.name !== '') {
-                axios.post('/user/post', {id: this.state.id, name: this.state.name}).then((res) => {
-
-                    let ans = res.data
-                    if (ans === true) {
-                        this.props.myform(this.state.id, this.state.name)
-                    }
-
+            if (this.state.name !== '') {
+                axios.post('/user/post', {name: this.state.name}).then((res) => {
+                    this.props.myform(this.state.name)
                     this.setState({
                         id: '',
                         name: ''
                     });
-
 
                 })
             }

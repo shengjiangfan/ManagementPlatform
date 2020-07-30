@@ -87,12 +87,14 @@ class App extends Component {
     };
 
     //提交
-    myForm = (id, name) => {
-        let item = {id, name}
+    myForm = (name) => {
+
         // 添加到comments中, 更新state
         let items = this.state.list
-        items.unshift(item)
-        this.setState({item})
+        let length =items.length
+        items[length]={id:length,name: name}
+        //items.unshift(item)
+        this.setState({list:items})
     }
 
     myFilter = (list) => {

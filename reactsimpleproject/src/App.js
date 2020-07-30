@@ -73,7 +73,6 @@ class App extends Component {
 
     //删除
     deleteItem = (item) => {
-        //axios.delete(`/user/${item.id}`).then(({data}) => {
         axios.get(`/user/delete`, {params: {id: item.id}}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
@@ -100,7 +99,6 @@ class App extends Component {
     }
 
     myFilter = (list) => {
-
         this.setState({list})
     }
 }

@@ -19,13 +19,14 @@ public class UserController {
     @RequestMapping("/post")
     public Object addUser(@RequestBody User user) {
         this.userRepository.save(user);
-        return true;
+        return this.userRepository.findAll();
     }
     @RequestMapping("/delete")//删
     public Object delUser(@RequestParam("id") Integer id
     ) {
         this.userRepository.deleteById(id);
-        return true;
+        return this.userRepository.findAll();
+        //return true;
     }
     @RequestMapping("/filter")
     public List<User> getSome(@RequestParam("lower") Integer lower,@RequestParam("upper") Integer upper){

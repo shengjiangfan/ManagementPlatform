@@ -44,23 +44,26 @@ class Form extends Component {
     }
     handleForm = (e) =>{
         e.preventDefault();
-        if(this.state.id !== '' && this.state.name !== ''){
-            axios.post('/user/post',{id:this.state.id,name:this.state.name}).then((res)=>{
+        // eslint-disable-next-line no-restricted-globals
+        const flag =confirm('是否提交 id：'+this.state.id + ';name:' + this.state.name + '?')
+        if(flag == true) {
+            if (this.state.id !== '' && this.state.name !== '') {
+                axios.post('/user/post', {id: this.state.id, name: this.state.name}).then((res) => {
 
-                let ans = res.data
-                if(ans===true){
-                    this.props.myform(this.state.id,this.state.name)
-                }
+                    let ans = res.data
+                    if (ans === true) {
+                        this.props.myform(this.state.id, this.state.name)
+                    }
 
-                this.setState({
-                    id:'',
-                    name:''
-                });
+                    this.setState({
+                        id: '',
+                        name: ''
+                    });
 
 
-            })
+                })
+            }
         }
-
 
     };
 

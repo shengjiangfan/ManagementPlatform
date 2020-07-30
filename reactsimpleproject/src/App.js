@@ -91,7 +91,6 @@ class App extends Component {
     //提交
     myForm = (id, name) => {
         let item = {id, name}
-        alert('是否提交 id:' + id + ';姓名:' + name + '?')
         // 添加到comments中, 更新state
         let items = this.state.list
         items.unshift(item)

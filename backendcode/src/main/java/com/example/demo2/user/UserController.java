@@ -26,7 +26,6 @@ public class UserController {
     ) {
         this.userRepository.deleteById(id);
         return this.userRepository.findAll();
-        //return true;
     }
     @RequestMapping("/filter")
     public List<User> getSome(@RequestParam("lower") Integer lower,@RequestParam("upper") Integer upper){

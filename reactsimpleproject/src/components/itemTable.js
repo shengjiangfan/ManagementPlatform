@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 
-class ItemTable extends React.Component {
+class ItemTable extends Component {
     constructor(props) {
         super(props)
         this.state = {

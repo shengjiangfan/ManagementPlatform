@@ -16,6 +16,7 @@ class Form extends Component {
         }
     }
     render() {
+        console.log('render form')
         return(
             <div className="col-md-4 col-md-offset-1">
                 <form className="form-horizontal">

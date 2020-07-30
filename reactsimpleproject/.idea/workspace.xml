@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bd1c545-349f-4280-bb5a-13b67ddd245e" name="Default Changelist" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

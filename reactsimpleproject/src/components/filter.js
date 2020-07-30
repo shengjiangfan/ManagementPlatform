@@ -18,6 +18,7 @@ class Filter extends Component {
 
 
     render() {
+        console.log('render filter')
         return(
             <div className="col-xs-3 col-xs-offset-1">
                 <form className="form-horizontal">

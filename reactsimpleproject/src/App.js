@@ -11,9 +11,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list:[{
-                id:'',
-                name:''
+            list: [{
+                id: '',
+                name: ''
             }]
         }
     }
@@ -29,15 +29,8 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         changeItem={this.changeItem}
                     />
-                    <div>
-                        <Form myform={this.myForm}/>
-                        <Filter myfilter={this.myFilter}/>
-                    </div>
-
-
-
-
-
+                    <Form myform={this.myForm}/>
+                    <Filter myfilter={this.myFilter}/>
                 </div>
 
             </div>
@@ -63,14 +56,14 @@ class App extends Component {
 
     //修改
     changeItem = (item) => {
-        axios.post(`/user/post`,{id:item.id,name: item.name}).then(({data}) => {
+        axios.post(`/user/post`, {id: item.id, name: item.name}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
                 let unit = rowData[i]
                 if (unit.id === item.id) {
                     console.log("change")
-                    rowData[i].name=item.name
+                    rowData[i].name = item.name
                 }
             }
             this.setState({list: rowData});
@@ -81,7 +74,7 @@ class App extends Component {
     //删除
     deleteItem = (item) => {
         //axios.delete(`/user/${item.id}`).then(({data}) => {
-        axios.get(`/user/delete`,{params:{id:item.id}}).then(({data}) => {
+        axios.get(`/user/delete`, {params: {id: item.id}}).then(({data}) => {
             console.log(data);
             let rowData = this.state.list;
             for (let i in rowData) {
@@ -97,21 +90,18 @@ class App extends Component {
     };
 
     //提交
-    myForm = (id,name)=>{
-        let item = { id, name }
+    myForm = (id, name) => {
+        let item = {id, name}
         alert('是否提交 id:' + id + ';姓名:' + name + '?')
         // 添加到comments中, 更新state
         let items = this.state.list
         items.unshift(item)
-        this.setState({ item })
-
-
-
+        this.setState({item})
     }
 
     myFilter = (list) => {
 
-        this.setState({ list })
+        this.setState({list})
     }
 }
 

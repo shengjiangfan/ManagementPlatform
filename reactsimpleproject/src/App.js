@@ -67,7 +67,6 @@ class App extends Component {
                 }
             }
             this.setState({list: rowData});
-            //[{"id":5,"name":"ads"},{"id":6,"name":"as"},{"id":7,"name":"asdas"},{"id":8,"name":"as"},{"id":9,"name":"asdadzzz"},{"id":10,"name":"asd"},{"id":11,"name":"ad"},{"id":12,"name":"asda"},{"id":13,"name":"11"}]
         })
     };
 
@@ -84,7 +83,6 @@ class App extends Component {
                 }
             }
             this.setState({list: rowData});
-            //[{"id":5,"name":"ads"},{"id":6,"name":"as"},{"id":7,"name":"asdas"},{"id":8,"name":"as"},{"id":9,"name":"asdadzzz"},{"id":10,"name":"asd"},{"id":11,"name":"ad"},{"id":12,"name":"asda"},{"id":13,"name":"11"}]
         })
     };
 

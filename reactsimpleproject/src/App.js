@@ -3,6 +3,7 @@ import axios from 'axios'
 import './App.css'
 import ItemTable from "./components/itemTable";
 import Filter from "./components/filter";
+import Form from "./components/form";
 
 //定义组件
 class App extends Component {
@@ -11,8 +12,8 @@ class App extends Component {
         super(props);
         this.state = {
             list:[{
-              id:'',
-              name:''
+                id:'',
+                name:''
             }]
         }
     }
@@ -28,28 +29,12 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         changeItem={this.changeItem}
                     />
-
-                    <div className="col-xs-3 col-xs-offset-1">
-                        <form className="form-horizontal">
-                            <div className="form-group">
-                                <label htmlFor="name" className="col-xs-3">用户名</label>
-                                <div className="col-xs-8">
-                                    <input type="text" id="name" className="form-control" value={this.state.name}
-                                           onChange={(e) => {
-                                               this.setState({name: e.target.value})
-                                           }}/>
-                                </div>
-
-                            </div>
-                            <div className="form-group">
-                                <div className="col-sm-offset-2 col-sm-10">
-                                    <button className="btn btn-default" onClick={this.handleFormSubmit}>提交</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
+                    <Form myform={this.myForm}/>
                     <Filter myfilter={this.myFilter}/>
+
+
+
+
                 </div>
 
             </div>
@@ -109,18 +94,18 @@ class App extends Component {
     };
 
     //提交
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        if (this.state.name !== '') {
-            axios.post('/user/post', {id: !this.state.id ? '' : this.state.id, name: this.state.name}).then(({data}) => {
-                this.setState({
-                    id: '',
-                    name: ''
-                });
-                this.query();
-            })
-        }
+    myForm = (id,name)=>{
+        let item = { id, name }
+        alert('是否提交 id:' + id + ';姓名:' + name + '?')
+        // 添加到comments中, 更新state
+        let items = this.state.list
+        items.unshift(item)
+        this.setState({ item })
+
+
+
     }
+
     myFilter = (list) => {
 
         this.setState({ list })
